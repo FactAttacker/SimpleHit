@@ -7,27 +7,27 @@ public class MapManager : MonoBehaviour
     [System.Serializable]
     class WallPrefab
     {
-        public GameObject wall;
+        public GameObject wall = null;
     }
     [SerializeField]
     [Header("벽 프리팹 배열")]
-    WallPrefab[] wallPrefabs;
+    WallPrefab[] wallPrefabs = null;
 
     [SerializeField]
     [Header("첫번째 벽 위치")]
-    Transform startWallPoint;
+    Transform startWallPoint = null;
 
     [SerializeField]
     [Header("생성 되기전 첫 벽 위치")]
-    Transform[] fistWalls;
+    Transform[] fistWalls = null;
 
     [SerializeField]
     [Header("첫 시작 벽")]
-    GameObject startWall;
+    GameObject startWall = null;
 
     [SerializeField]
     [Header("벽 생성 위치")]
-    Transform createPoint;
+    Transform createPoint = null;
 
     [Header("벽 이동 속도")]
     public float wallMoveSpeed = 5f;
@@ -37,11 +37,11 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     [Header("벽 보관 박스")]
-    GameObject wallBox;
+    GameObject wallBox = null;
 
     [SerializeField]
     [Header("벽 사라질 위치")]
-    Transform endWallPoint;
+    Transform endWallPoint = null;
 
     public bool isMove = false;
 

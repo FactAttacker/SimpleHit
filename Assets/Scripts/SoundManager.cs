@@ -27,9 +27,13 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        SFXSoundAction = new SFXSoundFnc(CheckSoundVolume);
         Debug.Log("> Start SoundManager");
+        SetSFXSoundAction();
         waitSound = new WaitForSeconds(BGMFadeSpeed * 0.01f);
+    }
+    void SetSFXSoundAction()
+    {
+        if(SFXSoundAction == null) SFXSoundAction = new SFXSoundFnc(CheckSoundVolume);
     }
     void CheckSoundVolume()
     {
@@ -59,6 +63,7 @@ public class SoundManager : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         SFXcurrentVolume = volume;
+        SetSFXSoundAction();
         SFXSoundAction();
     }
 
@@ -133,6 +138,6 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(BGMSource.isPlaying);
     }
 }

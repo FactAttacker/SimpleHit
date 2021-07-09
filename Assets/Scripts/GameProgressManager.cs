@@ -22,15 +22,15 @@ public class GameProgressManager : MonoBehaviour
 
     [SerializeField]
     [Header("?????? ??????? ??????")]
-    GameObject StartBtn;
+    GameObject StartBtn = null;
 
     [SerializeField]
     [Header("?????? ??????? ???????")]
-    Transform StartPoint;
+    Transform StartPoint = null;
 
-    [SerializeField]
-    [Header("?????? ??????? ???????")]
-    Transform EndPoint;
+    //[SerializeField]
+    //[Header("?????? ??????? ???????")]
+    //Transform EndPoint = null;
 
     public bool isStart = false;
 
@@ -38,16 +38,16 @@ public class GameProgressManager : MonoBehaviour
     public string clear = "<- ???????????????? ???????";
 
     [SerializeField]
-    GameObject pauseBox;
+    GameObject pauseBox = null;
 
     [SerializeField]
-    Slider BGMSlider;
+    Slider BGMSlider = null;
 
     [SerializeField]
-    Slider SFXSlider;
+    Slider SFXSlider = null;
 
     [SerializeField]
-    GameObject GameSettingBox;
+    GameObject GameSettingBox = null;
 
     WaitForSeconds waitCameraSpeed;
 

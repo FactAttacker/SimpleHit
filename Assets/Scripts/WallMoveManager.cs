@@ -13,11 +13,11 @@ public class WallMoveManager : MonoBehaviour
     [System.Serializable]
     class MoveWallObj
     {
-        public GameObject wall;
-        public MoveType type;
+        public GameObject wall = null;
+        public MoveType type = MoveType.NONE;
     }
     [SerializeField]
-    MoveWallObj[] moveWallObjs;
+    MoveWallObj[] moveWallObjs = null;
 
     //Vector3 md = new Vector3(0, -1f, 0);
     //Vector3 mu = new Vector3(0, 1f, 0);
@@ -42,7 +42,7 @@ public class WallMoveManager : MonoBehaviour
     }
     IEnumerator MoveWallCoroutine(GameObject obj)
     {
-        //?ÄÏßÅÏûÑ ?∏Ï∞® (???ôÏùº?òÍ≤å ?ÄÏßÅÏù¥?îÍ±∞ Î∞©Ï?)
+        //???????? ????? (???????????? ????????????? ?????)
         switch (Random.Range(1, 4))
         {
             case 1:
@@ -64,14 +64,14 @@ public class WallMoveManager : MonoBehaviour
             yield return waitMoveSpeed1s;
             if (isUp)
             {
-                //?¨ÎùºÍ∞?
+                //????????
                 obj.transform.position += 5f * Time.deltaTime * Vector3.up;
-                //?ÑÏû¨ y <= y+8
+                //????? y <= y+8
                 if (obj.transform.position.y > max) isUp = false;
             }
             else
             {
-                //?¥Î†§Í∞?
+                //????????
                 obj.transform.position += 5f * Time.deltaTime * Vector3.down;
                 if (obj.transform.position.y < min) isUp = true;
             }

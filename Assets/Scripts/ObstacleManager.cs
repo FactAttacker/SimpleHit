@@ -14,14 +14,14 @@ public class ObstacleManager : MonoBehaviour
     [System.Serializable]
     class ObstacleInfo
     {
-        public Transform point;
-        public ObstacleType type;
+        public Transform point = null;
+        public ObstacleType type = ObstacleType.None;
     }
     [SerializeField]
-    ObstacleInfo[] obstacleInfos;
+    ObstacleInfo[] obstacleInfos = null;
 
     [SerializeField]
-    GameObject window;
+    GameObject window = null;
 
     public Transform parentPos;
 

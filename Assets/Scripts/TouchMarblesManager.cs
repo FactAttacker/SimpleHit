@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class TouchMarblesManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject marbles;
-    
+    GameObject marbles = null;
+
     public int marbleCnt = 10;
     
     List<GameObject> marblesList;
@@ -36,7 +36,7 @@ public class TouchMarblesManager : MonoBehaviour
     {
 		if (GameProgressManager.instance.isStart
             && !GameProgressManager.instance.isPause
-            && !EventSystem.current.currentSelectedGameObject // 터치한게 UI인지 확인
+            && !EventSystem.current.currentSelectedGameObject // ???????? UI???? ????
             && isShot && Input.GetMouseButtonDown(0))
 		{
             isShot = false;
